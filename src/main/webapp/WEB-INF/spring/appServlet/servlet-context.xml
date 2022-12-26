@@ -20,7 +20,7 @@
 	
 	
 	
-	<!-- 업로드 파일 설정(commons-fileupload) -->
+	<!-- 업로드 파일 설정(commons-fileUpload) -->
 	<beans:bean id="multipartResolver"
 				class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<!-- 업로드 파일 이름이 한글일 경우 깨짐 방지 -->
