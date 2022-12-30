@@ -12,3 +12,4 @@ Createria -> PagaHandler 등 클래스명 및 변수명 변경
 
 JS: var -> let
 
+filetype -> isImageType
