@@ -4,7 +4,8 @@
 
 
 책, 코드로 배우는 스프링 웹 프로젝트 개정판   
-https://product.kyobobook.co.kr/detail/S000001923741 의 모방작입니다.
+https://product.kyobobook.co.kr/detail/S000001923741 의 모방작입니다.   
+(원본 소스 https://cafe.naver.com/gugucoding/7819)
 
 
 
@@ -14,11 +15,11 @@ https://product.kyobobook.co.kr/detail/S000001923741 의 모방작입니다.
 추가적으로 제가 필요하다고 생각한 부분을 수정하거나 덧붙였습니다.
 
 
-변경사항은 맨 아래에 적어놓았습니다.
+변경사항은 제일 하단에 적어놓았습니다.
 
 * * *
 
-접속 URL : 
+프로젝트 접속 URL : 
 
 
 * * *
@@ -31,32 +32,30 @@ https://product.kyobobook.co.kr/detail/S000001923741 의 모방작입니다.
 2. 각종 책에서 배웠던 리팩터링 / 클린 코드의 적용
 
 
-을 중점에 두려했고, 소소한 기능들은 네이버 카페를 참고했습니다.
+을 중점에 두려했고, 소소한 기능들은 네이버 카페를 기준 삼았습니다.
 
 
 
 
 * * *
 개발환경
-- java 11 (jdk 11.0.2)
-- STS 3.9.18
-- 프레임워크: Spring 5.0.7
-- 데이터베이스: Oracle 11g
+- JDK: 11
+- IDE: STS 3.9.18
+- Spring: 5.0.7
+- DB: Oracle 11g
 - ORM: Mybatis
-- 언어: java, javascript, jquery, html, css
+- Language: java, javascript, jquery, html, css
 
 
 
 * * *
 주요기능
+ - 
 
 
 
 
 * * *
-책의 소스 원본은 https://cafe.naver.com/gugucoding/7819 이곳에서 확인하실 수 있으며,
-
-
 아래는 변경사항입니다.
 
 
