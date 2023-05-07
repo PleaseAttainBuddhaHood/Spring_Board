@@ -39,12 +39,12 @@ https://product.kyobobook.co.kr/detail/S000001923741 의 모방작입니다.
 
 * * *
 개발환경
-- JDK: 11
-- IDE: STS 3.9.18
-- Spring: 5.0.7
-- DB: Oracle 11g
-- ORM: Mybatis
-- Language: java, javascript, jquery, html, css
+- *JDK*: 11
+- *IDE*: STS 3.9.18
+- *Spring*: 5.0.7
+- *DB*: Oracle 11g
+- *ORM*: Mybatis
+- *Language*: java, javascript, jquery, html, css
 
 
 
