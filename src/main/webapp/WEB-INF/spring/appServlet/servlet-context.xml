@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/mvc 
+		https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans 
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		https://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+	<annotation-driven />
+
+	<resources mapping="/resources/**" location="/resources/" />
+
+
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+ 
+	
+	 <!-- 업로드 파일 설정(commons-fileUpload) -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 
+		<!-- 업로드 파일 이름이 한글일 경우 깨짐 방지 -->
+		<beans:property name="defaultEncoding" value="utf-8" />  
+		<!-- 한 번의 요청으로 전달될 수 있는 최대 크기 : 10MB -> 1024 * 1024 * 10 bytes -->
+		<beans:property name="maxUploadSize" value="104857560" />  
+		<!-- 파일 하나의 최대 크기 : 2MB -->
+		<beans:property name="maxUploadSizePerFile"	value="2097152" />  
+		<beans:property name="uploadTempDir" value="file:/D:\Programming\STS\tmp\Spring_Board" />
+		<!-- 메모리상에서 유지하는 최대 크기 : 넘어서면 TempDir에 보관됨-->
+		<beans:property name="maxInMemorySize" value="10485756" /> 
+	</beans:bean> 
+	
+	
+	<context:component-scan base-package="com.Spring_Board.controller" />
+	<context:component-scan base-package="com.Spring_Board.exception" />
+	
+	
+	<security:global-method-security pre-post-annotations="enabled" secured-annotations="enabled" />
+	
+</beans:beans>

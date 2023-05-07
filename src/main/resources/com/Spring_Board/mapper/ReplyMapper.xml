@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Spring_Board.mapper.ReplyMapper">
+	
+	<!-- 공통 : 검색 조건 -->
+	<sql id="pageHandler">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item="searchType" collection="searchTypeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="searchType == 'T'.toString()">
+							title like '%' || #{searchKeyword} || '%'
+						</when>
+						
+						<when test="searchType == 'C'.toString()">
+							content like '%' || #{searchKeyword} || '%'
+						</when>
+						
+						<when test="searchType == 'W'.toString()">
+							writer like '%' || #{searchKeyword} || '%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	
+	
+	
+	<!-- 등록  -->
+	<insert id="insert">
+		INSERT INTO tbl_reply(rno, bno, reply, replier)
+		VALUES 				 (seq_reply.nextval, #{bno}, #{reply}, #{replier})
+	</insert>
+	
+	
+	<!-- 조회  -->
+	<select id="read" resultType="com.Spring_Board.domain.ReplyVO">
+		SELECT		*
+		FROM		tbl_reply
+		WHERE		rno = #{rno}
+	</select>
+	
+	
+	<!-- 특정 게시물의 댓글 조회 -->
+	<select id="getListWithPaging" resultType="com.Spring_Board.domain.ReplyVO">
+		
+		<![CDATA[
+		SELECT		rno, bno, reply, replier, replyDate, replyUpdateDate
+		FROM		(
+						SELECT 	/*+ INDEX(tbl_reply idx_reply) */
+								rownum rn, rno, bno, reply, replier, replyDate, replyUpdateDate
+						FROM 	tbl_reply
+						WHERE	bno = #{bno}
+						AND		rno > 0
+						AND		rownum <= #{ph.currentPage} * #{ph.pageRowSize}
+					)
+		WHERE		rn > (#{ph.currentPage} - 1) * #{ph.pageRowSize}
+		]]>
+	</select>
+	
+	
+	<select id="getCountByBno" resultType="int">
+	<![CDATA[
+		SELECT		count(rno)
+		FROM		tbl_reply
+		WHERE		bno = #{bno}
+	]]>
+	</select>
+	
+	
+	<!-- 수정  -->
+	<update id="update">
+		UPDATE 		tbl_reply
+		SET			reply = #{reply},
+					replyUpdateDate = sysdate
+		WHERE		rno = #{rno}
+	</update>
+	
+	
+	<!-- 삭제  -->
+	<delete id="delete">
+		DELETE		
+		FROM		tbl_reply
+		WHERE		rno = #{rno}
+	</delete>
+	
+	
+	<delete id="deleteAll">
+		DELETE		
+		FROM		tbl_reply
+		WHERE		bno = #{bno}
+	</delete>
+	
+	
+</mapper>

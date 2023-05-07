@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Spring_Board.mapper.BoardMapper">
+	
+	<!-- 공통 -->
+	<sql id="pageHandler">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item="searchType" collection="searchTypeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="searchType == 'T'.toString()">
+							title like '%' || #{searchKeyword} || '%'
+						</when>
+						
+						<when test="searchType == 'C'.toString()">
+							content like '%' || #{searchKeyword} || '%'
+						</when>
+						
+						<when test="searchType == 'W'.toString()">
+							writer like '%' || #{searchKeyword} || '%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	
+	
+	<!-- 조회 -->
+	<!-- resultType은 쿼리 결과를 특정 클래스의 객체로 만들기 위함 -->
+	<select id="getList" resultType="com.Spring_Board.domain.BoardVO">
+		<![CDATA[
+			SELECT 	*
+			FROM 	tbl_board
+			WHERE	BNO > 0
+		]]>
+	</select>
+	
+	
+	<select id="getListWithPaging" resultType="com.Spring_Board.domain.BoardVO">
+	<![CDATA[
+		SELECT		bno, title, content, writer, regdate, updatedate, replycnt
+		FROM		(
+						SELECT 	/*+ INDEX_DESC(tbl_board pk_board) */ 
+								rownum rn, bno, title, content, writer, regdate, updatedate, replycnt
+						FROM 	tbl_board
+						WHERE
+						]]>
+								<include refid="pageHandler" />
+						<![CDATA[
+								rownum <= #{currentPage} * #{pageRowSize}
+					)
+					
+		WHERE RN > (#{currentPage} - 1) * #{pageRowSize} 
+						]]>
+	</select>
+	
+	
+	<select id="getTotalCount" resultType="int">
+		SELECT 		count(*)
+		FROM		tbl_board
+		WHERE 		<include refid="pageHandler" />
+					bno > 0
+	</select>
+
+
+	<select id="read" resultType="com.Spring_Board.domain.BoardVO">
+		SELECT 	* 
+		FROM 	tbl_board
+		WHERE	bno = #{bno}
+	</select>
+	
+	
+	
+	<!-- 삽입 -->
+	<insert id="insert">
+		INSERT INTO 	tbl_board(bno, title, content, writer)
+		VALUES 					 (seq_board.nextval, #{title}, #{content}, #{writer})
+	</insert>
+	
+	
+	<!-- Mybatis의 @SelectKey 애너테이션 --> 
+	<!-- 주로 PK 값을 미리(before) SQL을 통해서 처리해두고, 특정 이름으로 결과를 보관 -->
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="bno" order="BEFORE" resultType="long">
+			SELECT 	seq_board.nextval
+			FROM	DUAL
+		</selectKey>
+		
+		INSERT INTO 	tbl_board(bno, title, content, writer)
+		VALUES 					 (#{bno}, #{title}, #{content}, #{writer})
+	</insert>
+	
+	
+	<!-- 수정 -->
+	<update id="update">
+		UPDATE 	tbl_board
+		SET		title 		= #{title},
+				content 	= #{content}, 
+				writer 		= #{writer}, 
+				updateDate 	= sysdate
+		WHERE	bno = #{bno}			 
+	</update>
+	
+	<update id="updateReplyCnt">
+		UPDATE 		tbl_board
+		SET			replycnt = replycnt + #{amount}
+		WHERE		bno = #{bno}
+	</update>
+	
+	
+	<!-- 삭제 -->
+	<delete id="delete">
+		DELETE 
+		FROM 	tbl_board
+		WHERE	bno = #{bno}
+	</delete>
+</mapper>

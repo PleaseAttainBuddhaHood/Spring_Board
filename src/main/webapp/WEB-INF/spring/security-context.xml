@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="customAccessDenied" 	 	 class="com.Spring_Board.security.CustomAccessDeniedHandler" />
+	<bean id="customUserDetailsService"  class="com.Spring_Board.security.CustomUserDetailsService" />
+	<bean id="bcryptPasswordEncoder"  	 class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+		
+	
+	<security:http>
+		<security:access-denied-handler ref="customAccessDenied" />
+		<!-- 반드시 GET방식의 접근 URI 지정 -->
+		<security:form-login login-page="/customLogin" />
+
+		<!-- 자동 로그인의 DB 이용 설정 -->
+		<security:remember-me data-source-ref="dataSource" token-validity-seconds="604800" /> 
+							 
+	 	<!-- 로그아웃 시 세션 무효화 -->
+		<security:logout logout-url="/customLogout" invalidate-session="true" delete-cookies="remember-me, JSESSION_ID"/>
+	</security:http>
+	
+	
+	<security:authentication-manager>
+		<security:authentication-provider user-service-ref="customUserDetailsService">
+				<security:password-encoder ref="bcryptPasswordEncoder" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+</beans>
