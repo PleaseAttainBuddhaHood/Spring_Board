@@ -87,7 +87,7 @@
 5. 중요 부분 주석 추가
 
 6. 각 애너테이션의 위치를 유지보수 편하게 조정(변경가능성이 높은 애너테이션이 상단으로 가게끔 변경)
-![image](https://user-images.githubusercontent.com/83068670/236707354-89f8fe0b-bb01-4299-9f9c-25cf6aff533c.png)
+![image](https://user-images.githubusercontent.com/83068670/236707354-89f8fe0b-bb01-4299-9f9c-25cf6aff533c.png)   
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓   
 ![image](https://user-images.githubusercontent.com/83068670/236707392-89091589-7fab-4a79-9dd9-171d58bb0e0a.png)
 
