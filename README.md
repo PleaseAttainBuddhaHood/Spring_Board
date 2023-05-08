@@ -38,7 +38,7 @@
 1. **가독성 / 일관성 향상** 
 
 2. **각종 책에서 배웠던 리팩터링 / 클린 코드의 적용**   
- - 코드로 표현하지 못한 것을 주석으로 표현하려하기에, 필요한 주석만 남기고 코드로 올곧이 표현할 수 있도록 주력
+ - 필요한 주석만 남기고 코드로 올곧이 표현할 수 있도록 주력
  - 변경 가능성이 높은 애너테이션이 상단에 위치하도록 변경
  - 명료한 클래스-메서드-변수명 등
 
@@ -50,12 +50,11 @@
 
 * * *
 ### 4. 개발환경
-- **JDK**: 11
+- **Language**: java 11, javascript, html 5, css 3
 - **IDE**: STS 3.9.18
 - **Framework**: Spring 5.0.7
 - **DB**: Oracle 11g
 - **ORM**: Mybatis
-- **Language**: java, javascript, html, css
 - **Library**: jquery, bootstrap
 
 
@@ -83,7 +82,7 @@
 ### 6. 변경사항   
 
 
-1. **다른 프로젝트와의 개발환경 통일을 위해 'JDK 버전을 11'로 변경, 그에 맞게 'STS 버전도 3.9.18'로 변경**
+1. **다른 프로젝트와의 개발환경 통일을 위해 'JAVA 버전을 11'로 변경, 그에 맞게 'STS 버전도 3.9.18'로 변경**
 
 2. **모든 코드 내용을 가능한 '등록/조회/수정/삭제'(CRUD) 또는 '입력-처리-출력(IPO)' 순으로 변경** 
 
@@ -101,7 +100,7 @@
          
 4. **중요 부분마다 주석 추가**
 
-5. **각 애너테이션의 위치를 유지보수 편하게 조정(변경가능성이 높은 애너테이션이 상단으로 가게끔 변경)**
+5. **각 애너테이션의 위치를 유지보수 편하게 조정(변경 가능성이 높은 애너테이션이 상단으로 가게끔 변경)**
 ![image](https://user-images.githubusercontent.com/83068670/236707354-89f8fe0b-bb01-4299-9f9c-25cf6aff533c.png)   
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓   
 ![image](https://user-images.githubusercontent.com/83068670/236707392-89091589-7fab-4a79-9dd9-171d58bb0e0a.png)
@@ -123,34 +122,53 @@
 ![image](https://user-images.githubusercontent.com/83068670/236768309-a0187a06-3039-409d-bfc9-21898fb6fd9f.png)   
 
 9. **제목 또는 내용이 null인 상태로 게시물이 등록되지 않게 'null 상태 안내 메시지(alert)' 추가**   
+![image](https://user-images.githubusercontent.com/83068670/236879546-993d59d6-692e-41bf-afea-2ab10894c4af.png)   
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓   
+![image](https://user-images.githubusercontent.com/83068670/236879686-f1eb84f2-5466-4260-ad15-8ed8ba2a81c1.png)   
 
 
 10. **'자신이 작성하지 않은 댓글'은 '저장', '삭제' 버튼이 보이지 않게하고, '댓글 내용' 탭도 readonly로 변경**
 
 
 11. **글 삭제를 '수정'화면이 아닌, '조회' 화면에서 처리할 수 있도록 변경**
- 
+ ![image](https://user-images.githubusercontent.com/83068670/236880336-30bf9043-7379-470f-9a6a-9a6537d8890c.png)   
+↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓   
+![image](https://user-images.githubusercontent.com/83068670/236880415-361b8c7d-2d5c-4d7d-9b20-fa6bdc51acb4.png)   
+![image](https://user-images.githubusercontent.com/83068670/236880462-c4a16525-afc1-4eb1-b736-ececb49a2527.png)   
 
 
+
+      
 ### 클래스명
 1. domain 패키지 Criteria -> PageHandler : 페이징 처리(+검색조건)라는 의미가 직관적으로 와닿게 변경(강의 스프링의 정석을 참고하였음)
  
-   
+      
+         
+            
 ### 변수명
 1. PageDTO total -> **totalPage**   
 2. PageDTO realEnd -> **finalEndPage**   
 
+   
+      
 3. PageHandler pageNum -> **currentPage**   
 4. PageHandler amount -> **pageRowSize**   
 5. PageHandler type -> **searchType**   
 6. PageHandler keyword -> **searchKeyword**   
 
+   
+      
 7. BoardAttachVO boolean fileType -> **ImageType**   
 
+   
 8. ReplyVO replyer -> **replier** (replyer라는 영단어는 없음)   
 
-9. 게시물 조회(get.jsp, 로그인한 사용자) replyer -> **loginId**   
+   
+9. 게시물 조회(get.jsp, 로그인한 사용자) replyer -> **loginId**      
 
 
+   
+      
+         
 ### 변수 선언
 1. Javascript var -> let 
