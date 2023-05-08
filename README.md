@@ -30,8 +30,8 @@
 * * *
 
 ### 2. 프로젝트 접속 URL : http://3.37.123.235:8080/   
- id: admin90   
- pw: pw90   
+ **id**: admin90   
+ **pw**: pw90   
 
 * * *
 ### 3. 중점사항   
@@ -53,12 +53,12 @@
 
 * * *
 ### 4. 개발환경
-- **Language**: java 11, javascript, html 5, css 3
+- **Language**: java 11, javascript, html5, css3
 - **IDE**: STS 3.9.18
 - **Framework**: Spring 5.0.7
 - **DB**: Oracle 11g
 - **ORM**: Mybatis
-- **Library**: jquery, bootstrap
+- **Library**: jquery, bootstrap4
 
 ***
 ### 5. ERD
