@@ -2,7 +2,7 @@
 
 
 
-책, 코드로 배우는 스프링 웹 프로젝트 개정판 https://product.kyobobook.co.kr/detail/S000001923741 의 모방작입니다.     
+책, 코드로 배우는 스프링 웹 프로젝트 https://product.kyobobook.co.kr/detail/S000001923741 의 모방작입니다.     
 (원본 소스 https://cafe.naver.com/gugucoding/7819 에서 파트7_2 폴더 참조)
 
 
