@@ -87,8 +87,8 @@
 
 2. **모든 코드 내용을 가능한 '등록/조회/수정/삭제'(CRUD) 또는 '입력-처리-출력(IPO)' 순으로 변경** 
 
-3. **BSD 형식 적용(중괄호 위치 조정)**
-![image](https://user-images.githubusercontent.com/83068670/236761898-b187fff8-ea5b-42d0-a0a6-324198c4c532.png)   
+3. **BSD 형식 적용(중괄호 위치 조정)**   
+![image](https://user-images.githubusercontent.com/83068670/236761898-b187fff8-ea5b-42d0-a0a6-324198c4c532.png)    
 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓   
 ![image](https://user-images.githubusercontent.com/83068670/236761960-d889b48c-54bf-43b1-8658-f7085be5342f.png)   
 
