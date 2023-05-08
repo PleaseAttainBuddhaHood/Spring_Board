@@ -12,8 +12,9 @@
 2. 프로젝트 접속 URL   
 3. 중점사항   
 4. 개발환경   
-5. 주요기능   
-6. 변경사항   
+5. ERD
+6. 주요기능   
+7. 변경사항   
 ***
 ### 1. 소개   
 기본적으로 책을 처음부터 끝까지 그대로 따라가며(공부하며) 게시판을 만들었으며,
@@ -57,6 +58,9 @@
 - **ORM**: Mybatis
 - **Library**: jquery, bootstrap
 
+***
+### 5. ERD
+![image](https://user-images.githubusercontent.com/83068670/236908252-c6903512-0c4a-4dce-bc5c-e3baf2b93d34.png)   
 
 
 * * *
