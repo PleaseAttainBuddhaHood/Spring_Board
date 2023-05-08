@@ -17,7 +17,7 @@
 
 * * *
 
-프로젝트 접속 URL :    
+### 프로젝트 접속 URL :    
  id: admin90   
  pw: pw90   
 
@@ -37,18 +37,19 @@
 
 
 * * *
-개발환경
+### 개발환경
 - *JDK*: 11
 - *IDE*: STS 3.9.18
-- *Spring*: 5.0.7
+- *Framework*: Spring 5.0.7
 - *DB*: Oracle 11g
 - *ORM*: Mybatis
-- *Language*: java, javascript, jquery, html, css
+- *Language*: java, javascript, html, css
+- *Library*: jquery, bootstrap
 
 
 
 * * *
-*주요기능*   
+### 주요기능   
  - 게시글   
  : 등록/조회/수정/삭제/페이징/검색   
  
@@ -59,15 +60,15 @@
  
  - 자동 로그인   
   
- - 파일   
- : 첨부/삭제/이미지 파일 클릭 시 이미지 표시(이미지 및 non이미지 파일 구분)   
- : 매일 2시 파일 체크 스케줄러   
+ - 파일(image vs non image)   
+ : 첨부/삭제/이미지 파일 클릭 시 이미지 띄우기   
+ : 파일 체크 스케줄러   
 
 
 
 
 * * *
-아래는 *변경사항*입니다.
+### 아래는 변경사항입니다.
 
 
 1. 본 개발자의 다른 프로젝트와의 개발환경 통일을 위해 JDK 버전을 11로 변경하고, 그에 맞게 STS 버전도 3.9.18로 변경
