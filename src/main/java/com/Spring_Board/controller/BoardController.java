@@ -39,7 +39,7 @@ public class BoardController
 	private BoardService boardService;
 
 	
-	// 1. 등록 관련
+	// 등록
 	@PreAuthorize("isAuthenticated()") // 로그인 성공한 사용자만이 해당 기능 사용 가능
 	@GetMapping("/register")
 	public void register()
@@ -48,7 +48,6 @@ public class BoardController
 	}
 	
 	
-	// 게시물 등록
 	@PreAuthorize("isAuthenticated()")
 	@PostMapping("/register")
 	public String register(BoardVO board, RedirectAttributes rttr)
@@ -73,7 +72,7 @@ public class BoardController
 	
 
 
-	// 2. 조회 관련
+	// 조회
 	@GetMapping("/list")
 	public void list(PageHandler ph, Model model)
 	{

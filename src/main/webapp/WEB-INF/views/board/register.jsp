@@ -138,13 +138,19 @@ $(document).ready(function(e)
 		e.preventDefault();
 
 		let str = "";
-		let title = $("input[name='title']");
-		let content = $("input[name='content']");
+		let title = $("input[name='title']").val();
+		let content = $("textarea[name='content']").val();
 
 
-		if(title.value === null || content.value === null)
+		if(!title)
 		{
-			alert("제목과 내용을 입력해주세요.");
+			alert("제목을 입력하세요.");
+			return;
+		}
+
+		if(!content)
+		{
+			alert("내용을 입력하세요.");
 			return;
 		}
 
