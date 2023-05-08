@@ -38,13 +38,13 @@
 
 * * *
 ### 개발환경
-- *JDK*: 11
-- *IDE*: STS 3.9.18
-- *Framework*: Spring 5.0.7
-- *DB*: Oracle 11g
-- *ORM*: Mybatis
-- *Language*: java, javascript, html, css
-- *Library*: jquery, bootstrap
+- **JDK**: 11
+- **IDE**: STS 3.9.18
+- **Framework**: Spring 5.0.7
+- **DB**: Oracle 11g
+- **ORM**: Mybatis
+- **Language**: java, javascript, html, css
+- **Library**: jquery, bootstrap
 
 
 
