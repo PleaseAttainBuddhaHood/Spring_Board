@@ -107,7 +107,7 @@
 ![image](https://user-images.githubusercontent.com/83068670/236707392-89091589-7fab-4a79-9dd9-171d58bb0e0a.png)
 
 
-6. **댓글 삭제 시, 삭제 버튼 누르면 바로 삭제되는 것이 아니라 confirm 창으로 한 번 더 확인하게끔 개선**
+6. **댓글 삭제 시, 삭제 버튼 누르면 바로 삭제되는 것이 아니라, confirm 창으로 한 번 더 확인하게끔 개선**
 ![image](https://user-images.githubusercontent.com/83068670/236759559-ce65f181-29d6-4032-a1dd-ec0f30de6f1d.png)   
 
    
