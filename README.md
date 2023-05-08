@@ -60,8 +60,7 @@
 
 ***
 ### 5. ERD
-![image](https://user-images.githubusercontent.com/83068670/236908252-c6903512-0c4a-4dce-bc5c-e3baf2b93d34.png)   
-
+![image](https://user-images.githubusercontent.com/83068670/236909173-1550c0de-2a9f-4b29-a97b-5ce8d87243d8.png)   
 
 * * *
 ### 6. 주요기능   
