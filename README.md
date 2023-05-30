@@ -37,13 +37,3 @@ https://product.kyobobook.co.kr/detail/S000001923741
  - **파일(image vs non image)**   
  : 조회/업로드/다운로드/삭제   
  : 체크 스케줄러   
-
-   
-9. 게시물 조회(get.jsp, 로그인한 사용자) replyer -> **loginId**      
-
-
-   
-      
-         
-### 변수 선언
-1. Javascript var -> let 
